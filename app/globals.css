@@ -52,6 +52,7 @@
   --font-geist-sans: var(--font-geist-sans);
   --font-geist-mono: var(--font-geist-mono);
 
+  --color-bg-surface: #FAF9F9
   --color-surface-alt: #F2F1EF;
   --color-border-default: #DCDBD599;
 
@@ -69,6 +70,8 @@
   --color-text-secondary: #666666;
 
   --color-account-blue-hover: #2A7EBD;
+  
+  --color-border-subtle: #262626 · 10%;
 }
 
 :root {
