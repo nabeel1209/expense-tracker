@@ -52,8 +52,8 @@
   --font-geist-sans: var(--font-geist-sans);
   --font-geist-mono: var(--font-geist-mono);
 
-  --color-bg-surface: #FAF9F9
-  --color-surface-alt: #F2F1EF;
+  --color-bg-surface: #FAF9F9;
+  --color-bg-surface-alt: #F2F1EF;
   --color-border-default: #DCDBD599;
 
   --color-bg-default: #F9F8F6;
