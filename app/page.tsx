@@ -118,10 +118,6 @@ export default function Home() {
           amount.trim() !== "";
 
         if (isAllFilled) {
-          alert(
-            `Data Submitted!\nDate: ${date}\nAccount: ${accountSearch}\nCategory: ${categorySearch}\nNotes: ${notes}\nAmount: ${amount}`,
-          );
-
           setTransactions([...transactions, {
             type: isExpense ? 'expense': 'income',
             date: date,
@@ -130,7 +126,6 @@ export default function Home() {
             notes: notes,
             amount: Number.parseInt(amount)
           }])
-          
         } else {
           alert(
             `Incomplete!\n- Date: ${date}\n- Account: ${accountSearch}\n- Category: ${categorySearch}\n- Notes: ${notes}\n- Amount: ${amount}`,
@@ -284,6 +279,8 @@ export default function Home() {
             <span>{formatDate(date)}</span>
             <Calendar className="h-4 w-4 text-text-muted group-focus-within:text-text-default transition-colors" />
           </div>
+          
+          {/* assumptions: user can input date with datepicker */}
           <input
             type="date"
             value={date}
@@ -486,7 +483,7 @@ export default function Home() {
               placeholder="Search transaction"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="bg-white border-[0.5px] border-border-default rounded-[0.5rem] pl-8 pr-2 py-1.5 text-[0.625rem] w-40 outline-none font-normal focus:border-black transition-colors placeholder:font-sans"
+              className="bg-white border-[0.5px] border-border-default rounded-[0.5rem] pl-8 pr-2 py-1.5 text-[0.625rem] w-40 outline-none font-normal transition-colors placeholder:font-sans"
             />
             <Search className="absolute left-2.5 top-[0.45rem] h-3.5 w-3.5 text-text-secondary" />
           </div>
@@ -527,20 +524,20 @@ export default function Home() {
                         >
                           {t.type === "income" ? (
                             <ArrowDownRight
-                              className="h-4 w-4 text-success-default"
-                              strokeWidth={2}
+                              className="h-5 w-5 text-success-default"
+                              strokeWidth={1.5}
                             />
                           ) : (
                             <ArrowUpRight
-                              className="h-4 w-4 text-danger-default"
-                              strokeWidth={2}
+                              className="h-5 w-5 text-danger-default"
+                              strokeWidth={1.5}
                             />
                           )}
                         </div>
 
                         <div>
                           <div className="flex items-center gap-1 text-xs font-geist-mono mb-0.5">
-                            <span className="text-account-blue-hover font-medium">
+                            <span className="text-account-blue-hover font-semibold">
                               {t.account}
                             </span>
                             <span className="text-border-default">/</span>
